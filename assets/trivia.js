@@ -132,8 +132,7 @@ $(document).ready(function() {
                 }
                 n++;
                 key = keys[n];
-    
-    //checking if last question - if yes show score
+
                     if (checkIfLast()) {
                         displayFinalScore();
     
@@ -149,7 +148,7 @@ $(document).ready(function() {
     
     var counter = setInterval(count, 500);
     
-    //shows time remaining at the top of each question
+    //Time remaining for each q
     function count() {
         time--
         $(".countdown h3").html("TIME REMAINING: " + time);
@@ -185,11 +184,11 @@ $(document).ready(function() {
     
     //timer for message after choosing answer
      function countReset() {
-        counter = setInterval(count, 500);
+        counter = setInterval(count, 200);
     }
     
     
-    //displays final score after 'check if last' returns yes
+    //final score showing
     function displayFinalScore() {
         $(".rightAns").remove();
         $(".start").css("margin-top", "30px");
