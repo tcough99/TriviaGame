@@ -62,10 +62,13 @@ $(document).ready(function() {
         },
     };
     
-    //Div variables to for information
+    //Div variables  for keeping track
     var rightDiv = $("<div class='rightAns'></div>");
+
     var answerDiv = $("<div class='answers'></div>");
+
     var timerDiv = $("<div class='countdown'><h3></h3></div>");
+
     var questionDiv = $("<div class='question'><h3></h3></div>");
     
     
@@ -75,17 +78,17 @@ $(document).ready(function() {
     var key = keys[n];
     var time = 30;
     var n = 0;
+
     
-    //function with reset and game setup
+    //setup of the game 
     function setup() {
         $(".start").css("display", "none");
-    
-        var correct = 0;
-        var incorrect = 0;
-        var timeout = 0;
-        n = 0;
-        key = keys[n];
-    
+            var correct = 0;
+             var incorrect = 0;
+             var timeout = 0;
+                  n = 0;
+               key = keys[n];
+    //reset of the game
         var reset = function() {
             time = 30;
             $(".rightAns").empty();
@@ -98,26 +101,24 @@ $(document).ready(function() {
     
     reset();
     
-    //function to begin showing questions and following messages
+    //function to begin make q's work
     function showQA() {
         $(".question h3").html(questions[key].question);
-            
-        for (var i = 0; i < questions[key].answers.length; i++) {
-               $(".answers").append("<p class='answer'>" + questions[key].answers[i] + "<p>");
-        }
-                
+    for (var i = 0; i < questions[key].answers.length; i++) {
+     $(".answers").append("<p class='answer'>" + questions[key].answers[i] + "<p>");
+        }     
         $(".answers p").on("click", function() {
-            var selected = $(this).text();
+    var selected = $(this).text();
     
      //if then: if question right show this, if wrong show that
                 if (selected === questions[key].correct) {
-                    clearInterval(counter);
+                         clearInterval(counter);
                     $(timerDiv).remove();
                     $(questionDiv).remove();
                     $(".answers p").remove();
                     $(answerDiv).remove();
                        $(".main").append(rightDiv);
-                    $(".rightAns").text("YOU'RE RIGHT");
+                    $(".rightAns").text("THOMAS TERRIFIC! YOU ARE CORRECT!");
                     correct++;
                 } else {
                     clearInterval(counter);
@@ -126,7 +127,7 @@ $(document).ready(function() {
                     $(".answers p").remove();
                     $(answerDiv).remove();
                     $(".main").append(rightDiv);
-                    $(".rightAns").text("OPPS! THE CORRECT ANSWER WAS: " + questions[key].correct);
+                    $(".rightAns").text("NO SORRY WRONG! THE CORRECT ANSWER WAS: " + questions[key].correct);
                     incorrect++;
                 }
                 n++;
