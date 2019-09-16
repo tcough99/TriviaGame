@@ -1,0 +1,19 @@
+.navbar {
+        background-color: #ebebeb;
+    }
+    
+.main {
+        background-color: #aa1211;
+        padding: 10%;
+        color: #ebebeb;
+    }
+    
+ .start {
+        background-color: black;
+    }
+    
+.answers p:hover {
+        color: black;
+        border: 2px;
+        border-style: solid;
+    }
