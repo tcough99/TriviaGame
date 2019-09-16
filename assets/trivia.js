@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    //object that holds all questions and answer information
+    //object with the trivia questions and answeers
     var questions = {
         zero: {
             question: "Where does Thomas most commonly get dinner?",
@@ -21,7 +21,7 @@ $(document).ready(function() {
     
           four: {
              question: "What is Thomas's middle name?",
-            answers: ["Quinn ", "James", "George", "Ralph"],
+            answers: ["Quinn", "James", "George", "Ralph"],
             correct: "Quinn"
         },
     
@@ -39,7 +39,7 @@ $(document).ready(function() {
     
           seven: {
              question: "Who is Thomas's favorite musician?",
-            answers: ["Chance the Rapper", "Jon Bellon", "Coldplay", "Post Malone"],
+            answers: ["Chance the Rapper", "Jon Bellion", "Coldplay", "Post Malone"],
             correct: "Jon Bellion"
         },
     
@@ -62,13 +62,15 @@ $(document).ready(function() {
         },
     };
     
-    //setting up divs to contain info
+    //Div variables to for information
     var rightDiv = $("<div class='rightAns'></div>");
+    var answerDiv = $("<div class='answers'></div>");
     var timerDiv = $("<div class='countdown'><h3></h3></div>");
     var questionDiv = $("<div class='question'><h3></h3></div>");
-    var answerDiv = $("<div class='answers'></div>");
+    
     
     //object keys to return questions in order
+   
     var keys = Object.keys(questions);
     var key = keys[n];
     var time = 30;
@@ -184,8 +186,6 @@ $(document).ready(function() {
      function countReset() {
         counter = setInterval(count, 500);
     }
-    
-    
     
     
     //displays final score after 'check if last' returns yes
